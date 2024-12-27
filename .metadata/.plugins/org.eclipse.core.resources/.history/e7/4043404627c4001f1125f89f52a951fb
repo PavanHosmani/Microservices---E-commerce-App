@@ -1,0 +1,28 @@
+package com.order_service.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.reactive.function.client.WebClient;
+
+import com.order_service.dto.OrderResponseDTO;
+import com.order_service.entity.Order;
+import com.order_service.repository.OrderRepository;
+
+import reactor.core.publisher.Mono;
+
+@RestController
+public class OrderController {
+	
+	@Autowired
+	private OrderRepository OrderRepository;
+	
+	@Autowired
+	private WebClient.Builder WebClientBuilder;
+	
+	public Mono<ResponseEntity<OrderResponseDTO>> placeOrder(@RequestBody Order order){
+		
+	}
+}
